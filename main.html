@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChromaSense - Main</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>CHROMASENSE</h1>
+            <button class="btn-logout" id="logoutBtn">Logout</button>
+        </header>
+        
+        <main>
+            <div class="main-card">
+                <h2>Discover Your Perfect Color Palette</h2>
+                
+                <div class="gender-selection">
+                    <h3>Select Your Gender</h3>
+                    <div class="gender-options">
+                        <button class="gender-btn" data-gender="male">Male</button>
+                        <button class="gender-btn" data-gender="female">Female</button>
+                    </div>
+                </div>
+
+                <div class="age-selection" id="ageSection" style="display: none;">
+                    <h3>Select Age Group</h3>
+                    <div class="age-options">
+                        <button class="age-btn" data-age="child">Child</button>
+                        <button class="age-btn" data-age="teen">Teen</button>
+                        <button class="age-btn" data-age="adult">Adult</button>
+                    </div>
+                </div>
+
+                <div class="camera-section" id="cameraSection" style="display: none;">
+                    <h3>Capture Your Photo</h3>
+                    <div class="camera-container">
+                        <video id="video" autoplay playsinline></video>
+                        <canvas id="canvas" style="display: none;"></canvas>
+                        <div id="preview" class="preview-container" style="display: none;">
+                            <img id="previewImage" alt="Captured photo">
+                        </div>
+                    </div>
+                    <div class="camera-controls">
+                        <button class="btn-primary" id="startCameraBtn">Open Camera</button>
+                        <button class="btn-primary" id="captureBtn" style="display: none;">Capture Photo</button>
+                        <button class="btn-secondary" id="retakeBtn" style="display: none;">Retake</button>
+                        <button class="btn-primary" id="analyzeBtn" style="display: none;">Analyze & Get Recommendations</button>
+                    </div>
+                </div>
+
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <h3>Your Fashion Recommendations</h3>
+                    <div class="tone-info">
+                        <h4>Detected Skin Tone: <span id="skinTone"></span></h4>
+                        <p id="toneDescription"></p>
+                    </div>
+                    <div class="recommendations">
+                        <h4>Recommended Color Palette</h4>
+                        <div id="colorPalette" class="color-palette"></div>
+                        <div class="fashion-tips">
+                            <h4>Fashion Tips</h4>
+                            <ul id="fashionTips"></ul>
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="newAnalysisBtn">Start New Analysis</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
+
